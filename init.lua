@@ -147,7 +147,7 @@ local plugins = {
             }
             require('lspconfig').clangd.setup {
                 capabilities = cmp_nvim_lsp_capabilities,
-                cmd = { 'clangd', '--completion-style=detailed' },
+                cmd = { 'clangd', '--completion-style=detailed', '--header-insertion=never' },
                 on_attach = function()
                     bind_keymaps('clangd')
                 end
