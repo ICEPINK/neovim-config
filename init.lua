@@ -41,8 +41,8 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Custom -> Move focus to the
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Custom -> Move focus to the upper window' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Custom -> Go to previous diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Custom -> Go to next diagnostic' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Custom -> Diagnostic open float' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Custom -> Diagnostic set local list' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Custom -> Diagnostic open float' })
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Custom -> Diagnostic set local list' })
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Custom -> No highlight search' })
 
 -- # Plugins
@@ -334,6 +334,24 @@ local plugins = {
                 { desc = 'Telescope -> lsp_document_symbols' })
             vim.keymap.set('n', '<leader><Space>', telescope.buffers, { desc = 'Telescope -> buffers' })
         end,
+    },
+    {
+        'ThePrimeagen/harpoon',
+        branch = 'harpoon2',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = function()
+            local harpoon = require('harpoon')
+            harpoon:setup()
+
+            vim.keymap.set('n', '<leader>hh', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+                { desc = 'Harpoon -> toggle quick menu' })
+            vim.keymap.set('n', '<leader>ha', function() harpoon:list():append() end,
+                { desc = 'Harpoon -> append' })
+            vim.keymap.set('n', '<leader>q', function() harpoon:list():select(1) end, { desc = 'Harpoon -> list 1' })
+            vim.keymap.set('n', '<leader>w', function() harpoon:list():select(2) end, { desc = 'Harpoon -> list 2' })
+            vim.keymap.set('n', '<leader>e', function() harpoon:list():select(3) end, { desc = 'Harpoon -> list 3' })
+            vim.keymap.set('n', '<leader>r', function() harpoon:list():select(4) end, { desc = 'Harpoon -> list 4' })
+        end
     },
     {
         'tpope/vim-fugitive'
