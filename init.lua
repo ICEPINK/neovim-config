@@ -388,6 +388,11 @@ local plugins = {
         },
         config = function()
             vim.keymap.set('n', '<leader>n', function() vim.cmd.Neotree('toggle') end, { desc = 'Neotree -> toggle' })
+            require('neo-tree').setup({
+                filesystem = {
+                    hijack_netrw_behavior = "open_current",
+                },
+            })
         end
     },
     {
