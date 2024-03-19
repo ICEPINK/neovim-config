@@ -13,6 +13,7 @@ vim.opt.guicursor = ''
 vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
+vim.opt.langmenu = "none"
 vim.opt.list = true
 vim.opt.listchars = { tab = '→ ', trail = '·', eol = '‹', nbsp = '␣' }
 vim.opt.mouse = 'a'
@@ -32,6 +33,9 @@ vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.wrap = false
+
+-- # Cmd
+vim.cmd.language("en")
 
 -- # Keymaps
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Custom -> Exit terminal mode' })
