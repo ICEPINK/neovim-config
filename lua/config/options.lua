@@ -28,3 +28,5 @@ vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 250
 vim.opt.wrap = false
+
+vim.g.netrw_liststyle = 3

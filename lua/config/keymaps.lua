@@ -1,2 +1,2 @@
-vim.keymap.set('n', '<leader>', function() print("<leader> test!") end, { desc = 'Custom -> leader test' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Custom -> diagnostic.open_float' })
 vim.keymap.set('n', '<esc>', vim.cmd.nohlsearch, { desc = 'Custom -> nohlsearch' })
