@@ -2,7 +2,7 @@
 -- Globals ---------------------------------------------------------------------
 local g_build_type = 'Release'
 local g_executable = '.\\build\\VIS.exe'
-local g_executable_args = {}
+local g_executable_args = { '' }
 -- FncDefinitions --------------------------------------------------------------
 function in_args(a)
     for i,v in ipairs(arg) do
@@ -39,9 +39,8 @@ function build()
     os.execute(to_cmd(build_cmd))
 end
 function run()
-    print('@run(VIS.exe)')
-    run_cmd = g_executable_args
-    os.execute(g_executable .. to_cmd(run_cmd))
+    print('@run(' .. g_executable .. ' ' .. to_cmd(g_executable_args) .. ')')
+    os.execute(g_executable .. ' ' .. to_cmd(g_executable_args))
 end
 -- Handle Args -----------------------------------------------------------------
 print('')
