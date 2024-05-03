@@ -3,6 +3,8 @@
 local g_build_type = 'Release'
 local g_executable = '.\\build\\VIS.exe'
 local g_executable_args = { '' }
+local g_cmake_cxx_compiler = 'g++'
+local g_cmake_c_compiler = 'gcc'
 -- FncDefinitions --------------------------------------------------------------
 function in_args(a)
     for i,v in ipairs(arg) do
@@ -27,8 +29,10 @@ function setup()
         '-S ./',
         '-B ./build/',
         '-DCMAKE_BUILD_TYPE=' .. g_build_type,
+        '-DCMAKE_CXX_COMPILER=' .. g_cmake_cxx_compiler,
+        '-DCMAKE_C_COMPILER=' .. g_cmake_c_compiler,
     }
-    os.execute(to_cmd(setup_cmd))
+    return os.execute(to_cmd(setup_cmd))
 end
 function build()
     print('@build(cmake)')
@@ -36,18 +40,18 @@ function build()
         'cmake',
         '--build ./build/',
     }
-    os.execute(to_cmd(build_cmd))
+    return os.execute(to_cmd(build_cmd))
 end
 function run()
     print('@run(' .. g_executable .. ' ' .. to_cmd(g_executable_args) .. ')')
-    os.execute(g_executable .. ' ' .. to_cmd(g_executable_args))
+    return os.execute(g_executable .. ' ' .. to_cmd(g_executable_args))
 end
 -- Handle Args -----------------------------------------------------------------
 print('')
 if arg[1] == nil then
-    setup()
-    build()
-    run()
+    if not setup() then return end
+    if not build() then return end
+    if not run() then return end
     return
 end
 if in_args('--debug') then
@@ -57,12 +61,12 @@ if in_args('--release') then
     g_build_type = 'Release'
 end
 if in_args('--build') then
-    setup()
-    build()
+    if not setup() then return end
+    if not build() then return end
     return
 end
 if in_args('--setup') then
-    setup()
+    if not setup() then return end
     return
 end
 -- End -------------------------------------------------------------------------
