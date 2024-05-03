@@ -48,17 +48,17 @@ function run()
 end
 -- Handle Args -----------------------------------------------------------------
 print('')
-if arg[1] == nil then
-    if not setup() then return end
-    if not build() then return end
-    if not run() then return end
-    return
-end
 if in_args('--debug') then
     g_build_type = 'Debug'
 end
 if in_args('--release') then
     g_build_type = 'Release'
+end
+if in_args('--run') then
+    if not setup() then return end
+    if not build() then return end
+    if not run() then return end
+    return
 end
 if in_args('--build') then
     if not setup() then return end
@@ -69,4 +69,7 @@ if in_args('--setup') then
     if not setup() then return end
     return
 end
+if not setup() then return end
+if not build() then return end
+if not run() then return end
 -- End -------------------------------------------------------------------------
