@@ -16,5 +16,6 @@ return {
         vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope -> keymaps'})
         vim.keymap.set('n', '<leader>fr', builtin.lsp_references, { desc = 'Telescope -> lsp_references'})
         vim.keymap.set('n', '<leader>fw', builtin.lsp_dynamic_workspace_symbols, { desc = 'Telescope -> lsp_dynamic_workspace_symbols'})
+        vim.keymap.set('n', '<leader>fs', builtin.lsp_document_symbols, { desc = 'Telescope -> lsp_document_symbols'})
     end
 }
