@@ -9,7 +9,7 @@ return {
                 cpp = {hpp = 2, h = 1},
                 hpp = {cpp = 2, c = 1},
             },
-            switch_to_open_pane_if_possible = true,
+            switch_to_open_pane_if_possible = false,
         })
         vim.keymap.set('n', '<leader>x', vim.cmd.Ouroboros, { desc = 'Ouroboros -> switch' })
     end,
