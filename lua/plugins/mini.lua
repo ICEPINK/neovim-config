@@ -6,6 +6,6 @@ return {
         -- require('mini.surround').setup()
         require('mini.statusline').setup()
         -- require('mini.comment').setup()
-        -- require('mini.indentscope').setup()
+        -- require('mini.indentscope').setup({symbol = '│',})
     end,
 }
