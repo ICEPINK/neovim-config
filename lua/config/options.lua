@@ -1,6 +1,7 @@
 vim.opt.backup = false
 vim.opt.breakindent = true
 vim.opt.colorcolumn = '80'
+vim.opt.conceallevel = 1
 vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.guicursor = ''
