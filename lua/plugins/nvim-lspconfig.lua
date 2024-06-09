@@ -11,6 +11,8 @@ local function bind_keymaps(lsp_name)
     { buffer = 0, desc = string.format('LSP -> %s -> references', lsp_name) })
     vim.keymap.set('n', 'gs', vim.lsp.buf.signature_help,
     { buffer = 0, desc = string.format('LSP -> %s -> signature_help', lsp_name) })
+    vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help,
+    { buffer = 0, desc = string.format('LSP -> %s -> signature_help', lsp_name) })
     vim.keymap.set('n', '<F2>', vim.lsp.buf.rename,
     { buffer = 0, desc = string.format('LSP -> %s -> rename', lsp_name) })
     vim.keymap.set('n', '<F3>', vim.lsp.buf.format,

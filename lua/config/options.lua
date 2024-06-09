@@ -9,6 +9,7 @@ vim.opt.hlsearch = true
 vim.opt.ignorecase = true
 vim.opt.inccommand = 'split'
 vim.opt.langmenu = "none"
+vim.opt.linebreak = true;
 vim.opt.list = true
 vim.opt.listchars = { tab = '→ ', trail = '·', eol = '‹', nbsp = '␣' }
 vim.opt.mouse = 'a'
