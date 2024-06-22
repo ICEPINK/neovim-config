@@ -26,7 +26,7 @@ return {
     config = function()
         local lspconfig = require('lspconfig')
         lspconfig.clangd.setup {
-            cmd = { 'clangd', '--completion-style=detailed', '--header-insertion=never' },
+            cmd = { 'clangd', '--completion-style=detailed', '--header-insertion=never', '--function-arg-placeholders' },
             on_attach = function()
                 bind_keymaps('clangd')
             end
