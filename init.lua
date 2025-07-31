@@ -124,6 +124,7 @@ require('lazy').setup({
                 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Undotree -> Toggle' })
                 vim.g.undotree_WindowLayout = 4
                 vim.g.undotree_SetFocusWhenToggle = 1
+                vim.g.undotree_DiffAutoOpen = 0
                 vim.g.undotree_DiffCommand = 'git diff --no-index'
             end
         },
