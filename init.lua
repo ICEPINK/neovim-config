@@ -94,6 +94,7 @@ require('lazy').setup({
                 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope -> diagnostics'})
                 vim.keymap.set('n', '<leader>fD', builtin.lsp_definitions, { desc = 'Telescope -> lsp_definitions'})
                 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope -> find_files'})
+                vim.keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Telescope -> git_files'})
                 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope -> help_tags'})
                 vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope -> keymaps'})
                 vim.keymap.set('n', '<leader>ft', builtin.treesitter, { desc = 'Telescope -> Treesitter'})
