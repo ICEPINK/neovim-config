@@ -164,7 +164,6 @@ require('lazy').setup({
 
 -- cmd -------------------------------------------------------------------------
 vim.cmd.language('en')
-vim.cmd.command('Run !lua .nvim\\run.lua')
 
 -- keymaps ---------------------------------------------------------------------
 local run_args = ''
