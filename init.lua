@@ -6,6 +6,7 @@ vim.g.maplocalleader = ' '
 
 -- options ---------------------------------------------------------------------
 vim.opt.breakindent = true
+vim.opt.cinoptions = 'l1,g0,N-s,E-s,+0'
 vim.opt.conceallevel = 1
 vim.opt.cursorline = true
 vim.opt.expandtab = true
@@ -169,7 +170,8 @@ vim.cmd.command('Run !lua .nvim\\run.lua')
 local run_args = ''
 local run_cmd = 'lua'
 local run_file = '.nvim/run.lua'
-vim.keymap.set('n', '<esc>', vim.cmd.nohlsearch, { desc = 'Custom -> nohlsearch' })
+vim.keymap.set('n', '<leader><f1>', function() vim.cmd.edit(vim.fn.stdpath('config') .. '/init.lua') end, { desc = 'Custom -> edit init.lua' })
+vim.keymap.set('n', '<esc>', function() vim.cmd('nohlsearch') end, { desc = 'Custom -> nohlsearch' })
 vim.keymap.set('n', '<f5>', ':!' .. run_cmd .. ' ' .. run_file .. ' ' .. run_args .. '<CR>', { desc = 'Custom -> run.lua' })
 vim.keymap.set('n', '<s-f5>', function() vim.ui.input({ prompt = 'run args: ', default = run_args }, function(input) run_args = input end) end, { desc = 'Custom -> run args' })
 vim.keymap.set('n', '<c-f5>', function() vim.cmd.edit(run_file) end, { desc = 'Custom -> open run_file' })
